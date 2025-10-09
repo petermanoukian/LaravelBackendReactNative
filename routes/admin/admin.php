@@ -6,5 +6,6 @@ Route::prefix('admin')
     ->group(function () {
 
         require __DIR__ . '/cats.php';
+        require __DIR__ . '/subcats.php';
 
     });

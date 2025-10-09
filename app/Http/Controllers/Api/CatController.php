@@ -9,6 +9,7 @@ use App\Services\ImageUploader;
 use App\Services\FileUploader;
 use App\Http\Requests\StoreCatRequest;
 use Illuminate\Support\Facades\Log;
+use App\Services\CategoryService;
 
 class CatController extends Controller
 {
@@ -36,8 +37,7 @@ class CatController extends Controller
 
     public function getCatsAdmin($catid = null)
     {
-        $query = Cat::select('id', 'name')->orderBy('name', 'asc');
-        $cats = $query->get();
+        $cats = CategoryService::getCategories();
         return response()->json($cats);
     }
 
@@ -161,22 +161,32 @@ class CatController extends Controller
         ImageUploader $imageUploader,
         FileUploader $fileUploader,
          $id
-    ) {
+    ) 
+    {
         $cat = Cat::findOrFail($id);
         $data = $request->validated();
         $catName = $data['name'];
         $randomSuffix = uniqid();
 
+        /*
+        Log::info("🔧 Update request received for category ID: $id");
+        Log::info("Validated data:", $request->validated());
 
-    Log::info("🔧 Update request received for category ID: $id");
-    Log::info("Validated data:", $request->validated());
+        Log::info("Has image?", [$request->hasFile('img')]);
+        Log::info("Has file?", [$request->hasFile('file')]);
+        */
 
-    Log::info("Has image?", [$request->hasFile('img')]);
-    Log::info("Has file?", [$request->hasFile('file')]);
+        $exists = Cat::where('name', $catName)
+                    ->where('id', '!=', $id)
+                    ->exists();
 
+        if ($exists) {
+            return response()->json([
+                'message' => 'Category name already exists',
+            ], 409);
+        }
 
-
-        // Image upload
+       
         $imageResult = $request->hasFile('img')
             ? $imageUploader->handleUpload(
                 $request,
@@ -217,8 +227,8 @@ class CatController extends Controller
     public function destroyadmin($id)
     {
         $cat = Cat::findOrFail($id);
+        Subcat::where('catid', $id)->delete();
         $cat->delete();
-
         return response()->json(['deleted' => true, 'id' => $id]);
     }
 
@@ -230,9 +240,8 @@ class CatController extends Controller
         if (!is_array($ids) || empty($ids)) {
             return response()->json(['deleted' => false, 'message' => 'No IDs provided'], 422);
         }
-
+        Subcat::whereIn('catid', $ids)->delete();
         Cat::whereIn('id', $ids)->delete();
-
         return response()->json(['deleted' => true, 'ids' => $ids]);
     }
 
