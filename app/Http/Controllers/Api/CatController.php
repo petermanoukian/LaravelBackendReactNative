@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Models\Cat;
+use App\Models\Subcat;
 use Illuminate\Http\Request;
 use App\Services\ImageUploader;
 use App\Services\FileUploader;
@@ -85,12 +86,9 @@ class CatController extends Controller
 
 
 
-    public function storeadmin(
-        StoreCatRequest $request,
-        ImageUploader $imageUploader,
-        FileUploader $fileUploader
-        ) 
+    public function storeadmin(StoreCatRequest $request,ImageUploader $imageUploader, FileUploader $fileUploader) 
     {
+        /*
         Log::info('🧾 Incoming file metadata', [
             'img_mime' => $request->file('img')?->getMimeType(),
             'img_ext' => $request->file('img')?->getClientOriginalExtension(),
@@ -99,10 +97,19 @@ class CatController extends Controller
             'filer_ext' => $request->file('filer')?->getClientOriginalExtension(),
             'filer_name' => $request->file('filer')?->getClientOriginalName(),
         ]);
-        
+        */
         
         $data = $request->validated();
         $catName = $data['name'];
+
+        $exists = Cat::where('name', $catName)->exists();
+
+        if ($exists) {
+            return response()->json([
+                'message' => 'Category already exists',
+            ], 409);
+        }
+
         $randomSuffix = uniqid();
 
         // Image upload
@@ -129,10 +136,9 @@ class CatController extends Controller
             )
             : 'nofile';
         
-        Log::info('Filer received:', [$request->file('filer')]);
-        Log::info('File result:', [$fileResult]);    
+        //Log::info('Filer received:', [$request->file('filer')]);
+        //Log::info('File result:', [$fileResult]);    
         
-        // Create Cat record
         $cat = Cat::create([
             'name' => $catName,
             'img' => $imageResult['image'] ?? null,
