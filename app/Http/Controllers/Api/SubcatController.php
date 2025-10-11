@@ -18,7 +18,8 @@ class SubcatController extends Controller
         $search = trim($request->query('search', ''));
         $orderBy = $request->query('sort', 'id');
         $direction = strtolower($request->query('direction', 'desc')) === 'asc' ? 'asc' : 'desc';
-        $perPage = max(1, min(100, intval($request->query('per_page', 10))));
+        $perPage = max(1, min(100, intval($request->query('per_page', 4))));
+        $page = max(1, intval($request->query('page', 1)));
 
         // Override logic: prefer route param if valid, else fallback to query param
         $queryCatid = intval($request->query('catid', 0));
@@ -37,13 +38,19 @@ class SubcatController extends Controller
         }
 
         $subcats = $query->orderBy($orderBy, $direction)->paginate($perPage);
-        $cats = CategoryService::getDropdownOptions();
+        $cats = CategoryService::getCategories();
 
         return response()->json([
-            'subcats' => $subcats,
+            'subcats' => $subcats->items(),
             'cats' => $cats,
+            'meta' => [
+                'current_page' => $subcats->currentPage(),
+                'last_page' => $subcats->lastPage(),
+                'total' => $subcats->total(),
+            ],
         ]);
     }
+
 
 
     public function checkadmin(Request $request)
@@ -103,7 +110,7 @@ class SubcatController extends Controller
     public function editadmin($id)
     {
         $row = Subcat::with('cat')->findOrFail($id);
-        $cats = CategoryService::getDropdownOptions();
+        $cats = CategoryService::getCategories();
 
         return response()->json([
             'row' => $row,

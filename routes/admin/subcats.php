@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\SubcatController;
 
 Route::get('/subcats/view/{catid?}', [SubcatController::class, 'viewadmin'])->name('adminsubcat.view');
-Route::post('/subcat/create/{catid?}', [SubcatController::class, 'createadmin']);
+Route::get('/subcat/create/{catid?}', [SubcatController::class, 'createadmin']);
 Route::post('/subcat/add', [SubcatController::class, 'storeadmin']);
 Route::post('/subcat/check', [SubcatController::class, 'checkadmin']);
 Route::get('/subcat/edit/{id}', [SubcatController::class, 'editadmin'])->name('adminsubcat.edit');
