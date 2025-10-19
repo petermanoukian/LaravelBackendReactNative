@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use App\Models\Subcat;
-
+use App\Models\Prod;
 
 class Cat extends Model
 {
@@ -20,6 +20,9 @@ class Cat extends Model
     {
         return $this->hasMany(Subcat::class, 'catid');
     }
-
+    public function prodcats(): HasMany
+    {
+        return $this->hasMany(Prod::class, 'catid');
+    }
 
 }

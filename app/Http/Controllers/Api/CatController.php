@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Models\Cat;
 use App\Models\Subcat;
+use App\Models\Prod;
 use Illuminate\Http\Request;
 use App\Services\ImageUploader;
 use App\Services\FileUploader;
@@ -142,7 +143,7 @@ class CatController extends Controller
         $cat = Cat::create([
             'name' => $catName,
             'img' => $imageResult['image'] ?? null,
-            'img2' => $imageResult['thumbnail'] ?? null,
+            'img2' => $imageResult['thumb'] ?? null,
             'filer' => $fileResult['path'] ?? null,
 
         ]);
@@ -190,7 +191,7 @@ class CatController extends Controller
         $imageResult = $request->hasFile('img')
             ? $imageUploader->handleUpload(
                 $request,
-                folderName: 'images/cat/img',
+                folderName: 'images/cat',
                 baseFileName: $catName,
                 randomSuffix: $randomSuffix,
                 maxWidth: 1500,
@@ -214,7 +215,7 @@ class CatController extends Controller
         $cat->update([
             'name' => $catName,
             'img' => $imageResult['image'] ?? $cat->img,
-            'img2' => $imageResult['thumbnail'] ?? $cat->img,
+            'img2' => $imageResult['thumb'] ?? $cat->img,
             'filer' => $fileResult['path'] ?? $cat->filer,
 
         ]);
@@ -227,6 +228,7 @@ class CatController extends Controller
     public function destroyadmin($id)
     {
         $cat = Cat::findOrFail($id);
+        Prod::where('catid', $id)->delete();
         Subcat::where('catid', $id)->delete();
         $cat->delete();
         return response()->json(['deleted' => true, 'id' => $id]);
@@ -240,6 +242,7 @@ class CatController extends Controller
         if (!is_array($ids) || empty($ids)) {
             return response()->json(['deleted' => false, 'message' => 'No IDs provided'], 422);
         }
+        Prod::whereIn('catid', $ids)->delete();
         Subcat::whereIn('catid', $ids)->delete();
         Cat::whereIn('id', $ids)->delete();
         return response()->json(['deleted' => true, 'ids' => $ids]);

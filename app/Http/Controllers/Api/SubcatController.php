@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreSubcatRequest;
 use App\Services\CategoryService;
+use App\Services\SubcategoryService;
 use App\Models\Cat;
 use App\Models\Subcat;
+use App\Models\Prod;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Log;
@@ -96,6 +98,34 @@ class SubcatController extends Controller
         ]);
     }
 
+    public function viewlist($catid = null)
+    {
+        $catid = ($catid !== null && intval($catid) > 0) ? intval($catid) : null;
+
+        $subcats = $catid
+            ? SubcategoryService::getSubcategories($catid)
+            : [];
+
+        return response()->json([
+            'subcats' => $subcats,
+        ]);
+    }
+
+
+    public function viewlistfull($catid = null)
+    {
+        $catid = ($catid !== null && intval($catid) > 0) ? intval($catid) : null;
+
+        $subcats = $catid
+            ? SubcategoryService::getSubcategories($catid)
+            : SubcategoryService::getAllSubcategories();
+
+        return response()->json([
+            'subcats' => $subcats,
+        ]);
+    }
+
+
     public function createadmin($catid = null)
     {
         $cats = CategoryService::getCategories();
@@ -173,8 +203,8 @@ class SubcatController extends Controller
     public function destroyadmin($id)
     {
         $subcat = Subcat::findOrFail($id);
+        Prod::where('subcatid', $id)->delete;
         $subcat->delete();
-
         return response()->json(['deleted' => true, 'id' => $id]);
     }
 
@@ -182,13 +212,11 @@ class SubcatController extends Controller
     public function destroyManyadmin(Request $request)
     {
         $ids = $request->input('ids', []);
-
         if (!is_array($ids) || empty($ids)) {
             return response()->json(['deleted' => false, 'message' => 'No IDs provided'], 422);
         }
-
+        Prod::whereIn('subcatid', $ids)->delete();
         Subcat::whereIn('id', $ids)->delete();
-
         return response()->json(['deleted' => true, 'ids' => $ids]);
     }
 

@@ -7,5 +7,6 @@ Route::prefix('admin')
 
         require __DIR__ . '/cats.php';
         require __DIR__ . '/subcats.php';
+        require __DIR__ . '/prods.php';
 
     });

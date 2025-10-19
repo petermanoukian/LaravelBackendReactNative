@@ -60,6 +60,7 @@ class AuthController extends Controller
 
     */
 
+    /*
 
     public function login(Request $request)
     {
@@ -91,6 +92,42 @@ class AuthController extends Controller
             'message' => 'Login successful',
         ]);
     }
+    */
+
+    public function login(Request $request)
+{
+    $request->validate([
+        'email'    => ['required', 'email'],
+        'password' => ['required'],
+    ]);
+
+    if (!Auth::attempt($request->only('email', 'password'))) {
+        return response()->json([
+            'message' => "Invalid credentials.",
+        ], 401);
+    }
+
+    $user = Auth::user();
+
+    // 🔥 Detect platform from header
+    $device = $request->header('X-Device-Type', 'unknown');
+
+    // 🔥 Delete only token for this device
+    $user->tokens()->where('name', $device)->delete();
+
+    // 🔥 Create new token for this device
+    $token = $user->createToken($device)->plainTextToken;
+
+    return response()->json([
+        'user' => [
+            'id'    => $user->id,
+            'name'  => $user->name,
+            'email' => $user->email,
+        ],
+        'token' => $token,
+        'message' => 'Login successful',
+    ]);
+}
 
 
     /**
