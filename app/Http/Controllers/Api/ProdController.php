@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreProdRequest;
+use App\Http\Requests\UpdateProdRequest;
 use App\Services\CategoryService;
 use App\Services\SubcategoryService;
 use App\Models\Cat;
@@ -296,7 +297,7 @@ class ProdController extends Controller
     }
 
 
-    public function updateadmin($id, StoreProdRequest $request, ImageUploader $imageUploader, FileUploader $fileUploader)
+    public function updateadmin($id, UpdateProdRequest $request, ImageUploader $imageUploader, FileUploader $fileUploader)
     {
         $prod = Prod::findOrFail($id);
         $data = $request->validated();
@@ -307,20 +308,22 @@ class ProdController extends Controller
         $coder = trim($data['coder']);
 
         // 🔒 Uniqueness check (excluding current record)
-        $exists = Prod::where(function ($query) use ($prodName, $catid, $subcatid) {
-                        $query->where('name', $prodName)
-                            ->where('catid', $catid)
-                            ->where('subcatid', $subcatid);
-                    })
-                    ->orWhere(function ($query) use ($coder) {
-                        $query->where('coder', $coder);
-                    })
-                    ->where('id', '!=', $id)
-                    ->exists();
+        $existsByCombo = Prod::where('name', $prodName)
+            ->where('catid', $catid)
+            ->where('subcatid', $subcatid)
+            ->where('id', '!=', $id)
+            ->exists();
 
-        if ($exists) {
+        $existsByCoder = Prod::where('coder', $coder)
+            ->where('id', '!=', $id)
+            ->exists();
+
+        if ($existsByCombo || $existsByCoder) {
             return response()->json([
-                'message' => 'Product already exists (name/catid/subcatid or coder)',
+                'message' => "Product ID: $id already exists (" .
+                    ($existsByCombo ? "name/catid/subcatid" : "") .
+                    ($existsByCombo && $existsByCoder ? " and " : "") .
+                    ($existsByCoder ? "coder" : "") . ")",
             ], 409);
         }
 
@@ -364,7 +367,8 @@ class ProdController extends Controller
             'filer' => $fileResult['path'] ?? $prod->filer,
         ]);
 
-        return response()->json($prod);
+        return response()->json($prod, 201);
+
     }
 
     public function destroyadmin($id)

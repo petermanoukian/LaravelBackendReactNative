@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Oct 19, 2025 at 07:29 AM
+-- Generation Time: Oct 19, 2025 at 10:49 AM
 -- Server version: 5.7.40
 -- PHP Version: 8.2.0
 
@@ -112,7 +112,7 @@ INSERT INTO `cats` (`id`, `name`, `img`, `img2`, `filer`, `created_at`, `updated
 (38, 'Ttt45', 'images/cat/large/Ttt45-68eba94aea2c5.jpg', 'images/cat/thumbnail/Ttt45-68eba94aea2c5.jpg', 'files/cat/Ttt45-68eba94aea2c5.jpg', '2025-10-12 09:12:46', '2025-10-12 09:12:46'),
 (39, '455', 'images/cat/large/455-68ebaa02457fc.jpg', NULL, 'files/cat/455-68ebaa02457fc.jpg', '2025-10-12 09:15:50', '2025-10-12 09:15:50'),
 (40, 'Tyyy', 'images/cat/img/large/Tyyy-68ebaa59bf5c4.jpg', 'images/cat/img/thumb/Tyyy-68ebaa59bf5c4.jpg', 'files/cat/Tyyy-68ebaa13488b0.jpg', '2025-10-12 09:16:07', '2025-10-12 09:17:18'),
-(41, 'Ty42', 'images/cat/large/Ty42-68ebac7b0f728.jpg', 'images/cat/thumb/Ty42-68ebac7b0f728.jpg', 'files/cat/Ty42-68ebaa40914c7.jpg', '2025-10-12 09:16:52', '2025-10-12 09:26:22'),
+(41, 'Ty42upd', 'images/cat/large/Ty42-68ebac7b0f728.jpg', 'images/cat/large/Ty42-68ebac7b0f728.jpg', 'files/cat/Ty42-68ebaa40914c7.jpg', '2025-10-12 09:16:52', '2025-10-19 06:03:01'),
 (42, 'Many', 'images/cat/large/Tyyy55-68ebac48a45a5.jpg', 'images/cat/large/Tyyy55-68ebac48a45a5.jpg', 'files/cat/Tyyy55-68ebac48a45a5.jpg', '2025-10-12 09:25:32', '2025-10-18 12:24:29');
 
 -- --------------------------------------------------------
@@ -244,8 +244,8 @@ CREATE TABLE IF NOT EXISTS `personal_access_tokens` (
 
 INSERT INTO `personal_access_tokens` (`id`, `tokenable_type`, `tokenable_id`, `name`, `token`, `abilities`, `last_used_at`, `expires_at`, `created_at`, `updated_at`) VALUES
 (62, 'App\\Models\\User', 1, 'auth_token', '50ef5128a5ffec643dac0c3acb9738fec8037202f1d8ac4819a84f7049a2a026', '[\"*\"]', '2025-10-14 04:59:04', '2025-10-14 06:54:46', '2025-10-07 06:54:46', '2025-10-14 04:59:04'),
-(99, 'App\\Models\\User', 1, 'mobile', 'c5ece403d54a221b7879ad2698838693b9497d9bd484cc02f154994d69f4f411', '[\"*\"]', '2025-10-19 03:06:21', NULL, '2025-10-19 03:02:56', '2025-10-19 03:06:21'),
-(98, 'App\\Models\\User', 1, 'web', 'a53c425647231a130394b509b0aaa7bc6d5069ee723564aa0f0b344bb70db74a', '[\"*\"]', '2025-10-19 02:55:16', NULL, '2025-10-19 02:55:13', '2025-10-19 02:55:16');
+(99, 'App\\Models\\User', 1, 'mobile', 'c5ece403d54a221b7879ad2698838693b9497d9bd484cc02f154994d69f4f411', '[\"*\"]', '2025-10-19 06:41:29', NULL, '2025-10-19 03:02:56', '2025-10-19 06:41:29'),
+(98, 'App\\Models\\User', 1, 'web', 'a53c425647231a130394b509b0aaa7bc6d5069ee723564aa0f0b344bb70db74a', '[\"*\"]', '2025-10-19 06:39:06', NULL, '2025-10-19 02:55:13', '2025-10-19 06:39:06');
 
 -- --------------------------------------------------------
 
@@ -273,7 +273,7 @@ CREATE TABLE IF NOT EXISTS `prods` (
   UNIQUE KEY `prods_coder_unique` (`coder`),
   KEY `prods_catid_foreign` (`catid`),
   KEY `prods_subcatid_foreign` (`subcatid`)
-) ENGINE=InnoDB AUTO_INCREMENT=48 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=49 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `prods`
@@ -318,15 +318,7 @@ INSERT INTO `prods` (`id`, `catid`, `subcatid`, `name`, `coder`, `des`, `dess`, 
 (36, 42, 35, 'Fggg', 'Fffg', NULL, NULL, NULL, NULL, NULL, 'yes', '2025-10-18 12:57:18', '2025-10-18 12:57:18'),
 (37, 42, 37, 'Ggggsddd', 'Cofe', NULL, NULL, NULL, NULL, NULL, 'yes', '2025-10-18 12:57:33', '2025-10-18 12:57:33'),
 (38, 42, 37, 'Manyptrid2', 'Prd2', NULL, NULL, NULL, NULL, NULL, 'yes', '2025-10-18 12:57:46', '2025-10-18 12:57:46'),
-(39, 42, 37, 'Tytfff', '445rr', NULL, NULL, NULL, NULL, NULL, 'yes', '2025-10-18 12:59:11', '2025-10-18 12:59:11'),
-(40, 42, 37, 'Tyÿ', 'Ttttþt', NULL, NULL, NULL, NULL, NULL, 'yes', '2025-10-18 12:59:23', '2025-10-18 12:59:23'),
-(41, 42, 37, 'Gþtttt', 'Gggggf', NULL, NULL, NULL, NULL, NULL, 'yes', '2025-10-18 12:59:46', '2025-10-18 12:59:46'),
-(42, 42, 37, '55⁵555t', 'Rrrrrrtt', NULL, NULL, NULL, NULL, NULL, 'yes', '2025-10-18 13:02:16', '2025-10-18 13:02:16'),
-(43, 42, 37, 'Ttþtt', 'Ffffffgf', NULL, NULL, NULL, NULL, NULL, 'yes', '2025-10-18 13:02:46', '2025-10-18 13:02:46'),
-(44, 42, 37, 'Ggʻggg', 'Rrrŕrrr', NULL, NULL, NULL, NULL, NULL, 'yes', '2025-10-18 13:02:59', '2025-10-18 13:02:59'),
-(45, 42, 37, 'Ty67', '56t', NULL, NULL, NULL, NULL, NULL, 'yes', '2025-10-18 13:03:09', '2025-10-18 13:03:09'),
-(46, 42, 37, 'Tyyyy', '666yytf', NULL, NULL, NULL, NULL, NULL, 'yes', '2025-10-18 13:03:35', '2025-10-18 13:03:35'),
-(47, 42, 37, 'Tyyyygg', 'Ggʻggggg', NULL, NULL, NULL, NULL, NULL, 'yes', '2025-10-18 13:03:46', '2025-10-18 13:03:46');
+(39, 42, 37, 'Tytfff', '445rr', NULL, NULL, NULL, NULL, NULL, 'yes', '2025-10-18 12:59:11', '2025-10-18 12:59:11');
 
 -- --------------------------------------------------------
 
@@ -398,7 +390,9 @@ INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, 
 ('PecmhG7bJSbc4eTgoLwkM9paI2RCDg5aUJNJmVfA', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:143.0) Gecko/20100101 Firefox/143.0', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiWnA5RlZSN2NNWjFZRkRtcTVhcGhNQldJc0RFcFNlOGY5ZHE3c2U3ciI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1760421672),
 ('Kd2yjAyEELXsm50160rqqArJ28t9wufpexXFq9Rw', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiV0RsdVZOTEM2MGhkTWpWWXN3cm13NDk4anpnUmdPVlA0eGk0aVNYWiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1760621039),
 ('kr63ihkB5wtuTLPTvXTzhxrDHzqOQXdus1ANnIXo', NULL, '192.168.11.50', 'Avast Antivirus', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiVmw0YnF0ZEdnVUFSS1pZYkVKbHVoTEtYbjhiU1BRSzNoYkFWS2NBTyI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjU6Imh0dHA6Ly8xOTIuMTY4LjExLjUwOjgwMDAiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1760783221),
-('z9VHPqqi2JjEm1ficD3wlLsHozNQsVidA5UQk6Nu', NULL, '192.168.11.50', '', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiOXFDNWV5ZVZGbzI0ZlhLZU5xTmV3MUFKaDFnTTZZRWYwVk90TkJLTiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjU6Imh0dHA6Ly8xOTIuMTY4LjExLjUwOjgwMDAiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1760783236);
+('z9VHPqqi2JjEm1ficD3wlLsHozNQsVidA5UQk6Nu', NULL, '192.168.11.50', '', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiOXFDNWV5ZVZGbzI0ZlhLZU5xTmV3MUFKaDFnTTZZRWYwVk90TkJLTiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjU6Imh0dHA6Ly8xOTIuMTY4LjExLjUwOjgwMDAiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1760783236),
+('pI1AlejtcROzqH4AEquXcOeyrf8C2wKnokSnljOS', NULL, '192.168.11.50', 'Avast Antivirus', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiSG9IcjNMa2lnVVAxNjVhZ1hrM3J5eEo0RDlKWGs1YVNRVzhyYXFuaSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjU6Imh0dHA6Ly8xOTIuMTY4LjExLjUwOjgwMDAiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1760870192),
+('e12KmLrVANW9Ixyb3ylk9MntaQW2B23zIvWNr5W9', NULL, '192.168.11.50', '', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoia0JNRUdwcmNGdFRvekVDY09qU1RsTk1idENFN0pHVUZ3VkhDZm1hTyI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjU6Imh0dHA6Ly8xOTIuMTY4LjExLjUwOjgwMDAiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1760870206);
 
 -- --------------------------------------------------------
 

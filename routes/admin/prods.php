@@ -10,7 +10,7 @@ Route::post('/prod/check', [ProdController::class, 'checkadminname']);
 Route::post('/prod/checkcode', [ProdController::class, 'checkadmincoder']);
 Route::get('/prod/edit/{id}', [ProdController::class, 'editadmin'])->name('adminsubcat.edit');
 Route::match(['post', 'put'], '/prod/update/{id}', [ProdController::class, 'updateadmin']);
-Route::post('/prod/checkedit', [ProdController::class, 'checkeditadmin']);
+Route::post('/prod/checkedit', [ProdController::class, 'checkeditadminname']);
 Route::post('/prod/checkcodeedit', [ProdController::class, 'checkeditadmincoder']);
 Route::delete('/prod/delete/{id}', [ProdController::class, 'destroyadmin']);
 Route::post('/subcats/deletemany', [ProdController::class, 'destroyManyadmin']);
