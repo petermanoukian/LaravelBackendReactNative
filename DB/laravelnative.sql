@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Oct 11, 2025 at 12:05 PM
+-- Generation Time: Oct 19, 2025 at 07:29 AM
 -- Server version: 5.7.40
 -- PHP Version: 8.2.0
 
@@ -66,7 +66,7 @@ CREATE TABLE IF NOT EXISTS `cats` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `cats`
@@ -103,9 +103,17 @@ INSERT INTO `cats` (`id`, `name`, `img`, `img2`, `filer`, `created_at`, `updated
 (28, 'Tgfff', 'images/cat/img/Tgfff-68e6111697d26.jpg', 'images/cat/img/thumb/Tgfff-68e6111697d26.jpg', 'files/cat/Tgfff-68e6111697d26.jpg', '2025-10-08 03:22:02', '2025-10-08 03:22:02'),
 (29, 'Rrrŕ', NULL, NULL, NULL, '2025-10-08 03:22:10', '2025-10-08 03:22:10'),
 (30, 'cat1', 'images/cat/img/Fffftt-68e6112c0be45.jpg', 'images/cat/img/Fffftt-68e6112c0be45.jpg', NULL, '2025-10-08 03:22:21', '2025-10-09 08:32:35'),
-(31, 'Tggtg', 'images/cat/img/img/Tggtg-68e790a500121.gif', 'images/cat/img/img/thumb/Tggtg-68e790a500121.gif', 'files/cat/Tggtg-68e790a500121.jpg', '2025-10-08 03:22:28', '2025-10-09 06:38:30'),
+(31, 'Tggtg', 'images/cat/img/img/Tggtg-68eba68d64999.jpg', 'images/cat/img/img/thumb/Tggtg-68eba68d64999.jpg', 'files/cat/Tggtg-68e790a500121.jpg', '2025-10-08 03:22:28', '2025-10-12 09:01:05'),
 (32, 'Rttt56', 'images/cat/img/img/Rttt56-68e790937a6dc.jpg', 'images/cat/img/img/thumb/Rttt56-68e790937a6dc.jpg', 'files/cat/Rttt56-68e790937a6dc.jpg', '2025-10-08 03:22:36', '2025-10-09 06:38:16'),
-(33, '5tttt', 'images/cat/img/img/5tttt-68e7945279fce.gif', 'images/cat/img/img/thumb/5tttt-68e7945279fce.gif', 'files/cat/5tttt-68e794496e643.jpg', '2025-10-08 03:22:47', '2025-10-09 06:54:12');
+(34, 'Brrr', 'images/cat/img/Brrr-68eba64b28773.jpg', 'images/cat/img/thumb/Brrr-68eba64b28773.jpg', NULL, '2025-10-12 08:59:59', '2025-10-12 08:59:59'),
+(35, 'Tttt', 'images/cat/img/Tttt-68eba66fece16.jpg', 'images/cat/img/thumb/Tttt-68eba66fece16.jpg', NULL, '2025-10-12 09:00:35', '2025-10-12 09:00:35'),
+(36, '566', 'images/cat/img/566-68eba78e6123b.jpg', 'images/cat/img/thumb/566-68eba78e6123b.jpg', NULL, '2025-10-12 09:05:22', '2025-10-12 09:05:22'),
+(37, 'New5', 'images/cat/large/New5-68eba8f646163.jpg', 'images/cat/thumbnail/New5-68eba8f646163.jpg', NULL, '2025-10-12 09:11:22', '2025-10-12 09:11:22'),
+(38, 'Ttt45', 'images/cat/large/Ttt45-68eba94aea2c5.jpg', 'images/cat/thumbnail/Ttt45-68eba94aea2c5.jpg', 'files/cat/Ttt45-68eba94aea2c5.jpg', '2025-10-12 09:12:46', '2025-10-12 09:12:46'),
+(39, '455', 'images/cat/large/455-68ebaa02457fc.jpg', NULL, 'files/cat/455-68ebaa02457fc.jpg', '2025-10-12 09:15:50', '2025-10-12 09:15:50'),
+(40, 'Tyyy', 'images/cat/img/large/Tyyy-68ebaa59bf5c4.jpg', 'images/cat/img/thumb/Tyyy-68ebaa59bf5c4.jpg', 'files/cat/Tyyy-68ebaa13488b0.jpg', '2025-10-12 09:16:07', '2025-10-12 09:17:18'),
+(41, 'Ty42', 'images/cat/large/Ty42-68ebac7b0f728.jpg', 'images/cat/thumb/Ty42-68ebac7b0f728.jpg', 'files/cat/Ty42-68ebaa40914c7.jpg', '2025-10-12 09:16:52', '2025-10-12 09:26:22'),
+(42, 'Many', 'images/cat/large/Tyyy55-68ebac48a45a5.jpg', 'images/cat/large/Tyyy55-68ebac48a45a5.jpg', 'files/cat/Tyyy55-68ebac48a45a5.jpg', '2025-10-12 09:25:32', '2025-10-18 12:24:29');
 
 -- --------------------------------------------------------
 
@@ -178,7 +186,7 @@ CREATE TABLE IF NOT EXISTS `migrations` (
   `migration` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `migrations`
@@ -189,7 +197,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (2, '0001_01_01_000001_create_cache_table', 1),
 (3, '0001_01_01_000002_create_jobs_table', 1),
 (4, '2025_10_03_102452_create_personal_access_tokens_table', 2),
-(5, '2025_10_09_125627_create_subcats_table', 3);
+(5, '2025_10_09_125627_create_subcats_table', 3),
+(6, '2025_10_12_094256_create_prods_table', 4);
 
 -- --------------------------------------------------------
 
@@ -227,15 +236,97 @@ CREATE TABLE IF NOT EXISTS `personal_access_tokens` (
   UNIQUE KEY `personal_access_tokens_token_unique` (`token`),
   KEY `personal_access_tokens_tokenable_type_tokenable_id_index` (`tokenable_type`,`tokenable_id`),
   KEY `personal_access_tokens_expires_at_index` (`expires_at`)
-) ENGINE=MyISAM AUTO_INCREMENT=64 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=100 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `personal_access_tokens`
 --
 
 INSERT INTO `personal_access_tokens` (`id`, `tokenable_type`, `tokenable_id`, `name`, `token`, `abilities`, `last_used_at`, `expires_at`, `created_at`, `updated_at`) VALUES
-(62, 'App\\Models\\User', 1, 'auth_token', '50ef5128a5ffec643dac0c3acb9738fec8037202f1d8ac4819a84f7049a2a026', '[\"*\"]', '2025-10-11 05:09:42', '2025-10-14 06:54:46', '2025-10-07 06:54:46', '2025-10-11 05:09:42'),
-(63, 'App\\Models\\User', 1, 'mobile', '337966745f700c9399dcd003e4df7dd2df092dc2264c1372762e0267c7860c62', '[\"*\"]', '2025-10-11 07:54:49', NULL, '2025-10-07 07:23:18', '2025-10-11 07:54:49');
+(62, 'App\\Models\\User', 1, 'auth_token', '50ef5128a5ffec643dac0c3acb9738fec8037202f1d8ac4819a84f7049a2a026', '[\"*\"]', '2025-10-14 04:59:04', '2025-10-14 06:54:46', '2025-10-07 06:54:46', '2025-10-14 04:59:04'),
+(99, 'App\\Models\\User', 1, 'mobile', 'c5ece403d54a221b7879ad2698838693b9497d9bd484cc02f154994d69f4f411', '[\"*\"]', '2025-10-19 03:06:21', NULL, '2025-10-19 03:02:56', '2025-10-19 03:06:21'),
+(98, 'App\\Models\\User', 1, 'web', 'a53c425647231a130394b509b0aaa7bc6d5069ee723564aa0f0b344bb70db74a', '[\"*\"]', '2025-10-19 02:55:16', NULL, '2025-10-19 02:55:13', '2025-10-19 02:55:16');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `prods`
+--
+
+DROP TABLE IF EXISTS `prods`;
+CREATE TABLE IF NOT EXISTS `prods` (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `catid` bigint(20) UNSIGNED NOT NULL,
+  `subcatid` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `coder` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `des` text COLLATE utf8mb4_unicode_ci,
+  `dess` longtext COLLATE utf8mb4_unicode_ci,
+  `img` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `img2` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `filer` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `vis` enum('yes','no') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'yes',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `prods_name_catid_subcatid_unique` (`name`,`catid`,`subcatid`),
+  UNIQUE KEY `prods_coder_unique` (`coder`),
+  KEY `prods_catid_foreign` (`catid`),
+  KEY `prods_subcatid_foreign` (`subcatid`)
+) ENGINE=InnoDB AUTO_INCREMENT=48 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `prods`
+--
+
+INSERT INTO `prods` (`id`, `catid`, `subcatid`, `name`, `coder`, `des`, `dess`, `img`, `img2`, `filer`, `vis`, `created_at`, `updated_at`) VALUES
+(1, 36, 19, 'LAST', 'Yy', NULL, 'Ttt', 'images/prod/large/555-68ee0c36b7725.jpg', 'images/prod/thumb/555-68ee0c36b7725.jpg', 'files/prod/555-68ee0c36b7725.jpg', 'yes', '2025-10-14 04:39:22', '2025-10-14 04:39:22'),
+(2, 30, 3, 'Prod1', 'Code1', NULL, NULL, 'images/prod/large/Prod1-68f242accc73f.jpg', 'images/prod/thumb/Prod1-68f242accc73f.jpg', 'files/prod/Prod1-68f242accc73f.jpg', 'yes', '2025-10-17 09:20:46', '2025-10-17 09:20:46'),
+(3, 30, 5, 'Prod1', 'Code3', NULL, 'Gg', 'images/prod/large/Prod1-68f36379c5899.jpg', 'images/prod/thumb/Prod1-68f36379c5899.jpg', 'files/prod/Prod1-68f36379c5899.jpg', 'yes', '2025-10-18 05:53:00', '2025-10-18 05:53:00'),
+(4, 39, 16, 'Prid33', '555', NULL, 'Hĥh', 'images/prod/large/Prid33-68f3678e78d3f.jpg', 'images/prod/thumb/Prid33-68f3678e78d3f.jpg', NULL, 'no', '2025-10-18 06:10:25', '2025-10-18 06:10:25'),
+(5, 41, 15, 'Prod5', 'Rrŕr', NULL, 'Hhĥ', 'images/prod/large/Prod5-68f367af60994.jpg', 'images/prod/thumb/Prod5-68f367af60994.jpg', NULL, 'yes', '2025-10-18 06:10:56', '2025-10-18 06:10:56'),
+(6, 30, 5, 'Prod45', 'Tt', NULL, 'Hhh', NULL, NULL, 'files/prod/Prod45-68f367efec725.jpg', 'yes', '2025-10-18 06:11:59', '2025-10-18 06:11:59'),
+(7, 41, 15, 'Tttt', 'Code2', NULL, NULL, NULL, NULL, NULL, 'yes', '2025-10-18 06:13:28', '2025-10-18 06:13:28'),
+(8, 2, 8, 'Tyyy', 'Dfff', NULL, NULL, 'images/prod/large/Tyyy-68f36868921a6.jpg', 'images/prod/thumb/Tyyy-68f36868921a6.jpg', NULL, 'yes', '2025-10-18 06:14:02', '2025-10-18 06:14:02'),
+(9, 36, 19, 'Tþttthhhh', 'Tþ', NULL, NULL, NULL, NULL, NULL, 'yes', '2025-10-18 06:15:04', '2025-10-18 06:15:04'),
+(10, 39, 16, 'Yuuu66', '4rrr', NULL, NULL, NULL, NULL, NULL, 'yes', '2025-10-18 06:15:44', '2025-10-18 06:15:44'),
+(11, 37, 23, 'Fffff', 'Dddd', NULL, NULL, NULL, NULL, NULL, 'yes', '2025-10-18 06:16:41', '2025-10-18 06:16:41'),
+(12, 26, 24, 'Tttt', 'Rrrr555', NULL, 'Gggg', 'images/prod/large/Tttt-68f36950a3542.jpg', 'images/prod/thumb/Tttt-68f36950a3542.jpg', 'files/prod/Tttt-68f36950a3542.jpg', 'yes', '2025-10-18 06:17:55', '2025-10-18 06:17:55'),
+(13, 37, 22, 'Ttttt', 'Fffffyyy', NULL, NULL, 'images/prod/large/Ttttt-68f3696b5ecb2.jpg', 'images/prod/thumb/Ttttt-68f3696b5ecb2.jpg', 'files/prod/Ttttt-68f3696b5ecb2.jpg', 'yes', '2025-10-18 06:18:22', '2025-10-18 06:18:22'),
+(14, 30, 5, 'Rrrt', 'Ttyyyyy', NULL, NULL, NULL, NULL, NULL, 'yes', '2025-10-18 07:18:27', '2025-10-18 07:18:27'),
+(15, 27, 28, 'Gggg', 'Tttt', NULL, NULL, 'images/prod/large/Gggg-68f377a690fc9.jpg', 'images/prod/thumb/Gggg-68f377a690fc9.jpg', 'files/prod/Gggg-68f377a690fc9.jpg', 'yes', '2025-10-18 07:19:05', '2025-10-18 07:19:05'),
+(16, 6, 6, 'Tttttg', 'Rtttt', NULL, NULL, 'images/prod/large/Tttttg-68f377d003f6f.jpg', 'images/prod/thumb/Tttttg-68f377d003f6f.jpg', 'files/prod/Tttttg-68f377d003f6f.jpg', 'yes', '2025-10-18 07:19:46', '2025-10-18 07:19:46'),
+(17, 42, 37, 'Ffff', 'Ggggg', NULL, NULL, NULL, NULL, NULL, 'yes', '2025-10-18 07:29:52', '2025-10-18 07:29:52'),
+(18, 42, 35, 'Ggʻg', 'Ffff', NULL, NULL, NULL, NULL, NULL, 'yes', '2025-10-18 07:30:09', '2025-10-18 07:30:09'),
+(19, 41, 14, 'Gggg', 'Cfff', NULL, NULL, NULL, NULL, NULL, 'yes', '2025-10-18 07:30:25', '2025-10-18 07:30:25'),
+(20, 40, 36, 'Ggg', 'Hghh', NULL, NULL, NULL, NULL, NULL, 'yes', '2025-10-18 07:30:38', '2025-10-18 07:30:38'),
+(21, 42, 37, 'new1', 'gfgfg', NULL, NULL, NULL, NULL, NULL, 'yes', '2025-10-18 09:45:27', '2025-10-18 09:45:27'),
+(22, 42, 37, 'new2', 'fggf', NULL, NULL, NULL, NULL, NULL, 'yes', '2025-10-18 09:45:52', '2025-10-18 09:45:52'),
+(23, 40, 36, 'Ttþ', 'Fffff', NULL, NULL, NULL, NULL, NULL, 'yes', '2025-10-18 12:24:08', '2025-10-18 12:24:08'),
+(24, 42, 37, 'Hggh', 'Ggʻ', NULL, NULL, NULL, NULL, NULL, 'yes', '2025-10-18 12:25:30', '2025-10-18 12:25:30'),
+(25, 42, 37, 'Gggg', 'Rrr', NULL, NULL, NULL, NULL, NULL, 'yes', '2025-10-18 12:25:42', '2025-10-18 12:25:42'),
+(26, 42, 35, 'Yyy', 'Ttttyyy', NULL, NULL, NULL, NULL, NULL, 'yes', '2025-10-18 12:26:01', '2025-10-18 12:26:01'),
+(27, 42, 35, 'Ggʻggg', 'Gggg', NULL, NULL, NULL, NULL, NULL, 'yes', '2025-10-18 12:26:19', '2025-10-18 12:26:19'),
+(28, 42, 35, 'Ttt', 'Ttt', NULL, NULL, NULL, NULL, NULL, 'yes', '2025-10-18 12:26:29', '2025-10-18 12:26:29'),
+(29, 42, 37, 'Yyy', '455', NULL, NULL, NULL, NULL, NULL, 'yes', '2025-10-18 12:54:50', '2025-10-18 12:54:50'),
+(30, 42, 37, '555555', '4552', NULL, NULL, NULL, NULL, NULL, 'yes', '2025-10-18 12:55:07', '2025-10-18 12:55:07'),
+(31, 42, 37, 'Yyy33', '56611', NULL, NULL, NULL, NULL, NULL, 'yes', '2025-10-18 12:55:19', '2025-10-18 12:55:19'),
+(32, 42, 37, 'Many2', '34', NULL, NULL, NULL, NULL, NULL, 'yes', '2025-10-18 12:55:33', '2025-10-18 12:55:33'),
+(33, 42, 37, '5565ttt', '4rrrr', NULL, NULL, 'images/prod/large/5565ttt-68f3c6a525305.jpg', 'images/prod/thumb/5565ttt-68f3c6a525305.jpg', NULL, 'yes', '2025-10-18 12:56:07', '2025-10-18 12:56:07'),
+(34, 42, 37, 'Ttttff', 'Decide', NULL, NULL, NULL, NULL, NULL, 'yes', '2025-10-18 12:56:26', '2025-10-18 12:56:26'),
+(35, 42, 37, 'Ttt', '45fff', NULL, NULL, NULL, NULL, NULL, 'yes', '2025-10-18 12:57:03', '2025-10-18 12:57:03'),
+(36, 42, 35, 'Fggg', 'Fffg', NULL, NULL, NULL, NULL, NULL, 'yes', '2025-10-18 12:57:18', '2025-10-18 12:57:18'),
+(37, 42, 37, 'Ggggsddd', 'Cofe', NULL, NULL, NULL, NULL, NULL, 'yes', '2025-10-18 12:57:33', '2025-10-18 12:57:33'),
+(38, 42, 37, 'Manyptrid2', 'Prd2', NULL, NULL, NULL, NULL, NULL, 'yes', '2025-10-18 12:57:46', '2025-10-18 12:57:46'),
+(39, 42, 37, 'Tytfff', '445rr', NULL, NULL, NULL, NULL, NULL, 'yes', '2025-10-18 12:59:11', '2025-10-18 12:59:11'),
+(40, 42, 37, 'Tyÿ', 'Ttttþt', NULL, NULL, NULL, NULL, NULL, 'yes', '2025-10-18 12:59:23', '2025-10-18 12:59:23'),
+(41, 42, 37, 'Gþtttt', 'Gggggf', NULL, NULL, NULL, NULL, NULL, 'yes', '2025-10-18 12:59:46', '2025-10-18 12:59:46'),
+(42, 42, 37, '55⁵555t', 'Rrrrrrtt', NULL, NULL, NULL, NULL, NULL, 'yes', '2025-10-18 13:02:16', '2025-10-18 13:02:16'),
+(43, 42, 37, 'Ttþtt', 'Ffffffgf', NULL, NULL, NULL, NULL, NULL, 'yes', '2025-10-18 13:02:46', '2025-10-18 13:02:46'),
+(44, 42, 37, 'Ggʻggg', 'Rrrŕrrr', NULL, NULL, NULL, NULL, NULL, 'yes', '2025-10-18 13:02:59', '2025-10-18 13:02:59'),
+(45, 42, 37, 'Ty67', '56t', NULL, NULL, NULL, NULL, NULL, 'yes', '2025-10-18 13:03:09', '2025-10-18 13:03:09'),
+(46, 42, 37, 'Tyyyy', '666yytf', NULL, NULL, NULL, NULL, NULL, 'yes', '2025-10-18 13:03:35', '2025-10-18 13:03:35'),
+(47, 42, 37, 'Tyyyygg', 'Ggʻggggg', NULL, NULL, NULL, NULL, NULL, 'yes', '2025-10-18 13:03:46', '2025-10-18 13:03:46');
 
 -- --------------------------------------------------------
 
@@ -294,7 +385,20 @@ INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, 
 ('raa2U8H4R6r2JuIMo2MN5dLTQl4jYKPAF8JBnTEW', NULL, '192.168.11.50', 'Avast Antivirus', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiVG1kMWVVb2VyeVAwNFdoalc3YmRtREw2eERZQkJQRkNoa29SZXoxdiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjU6Imh0dHA6Ly8xOTIuMTY4LjExLjUwOjgwMDAiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1760089289),
 ('e7hRcsU5EmFklU19DZyL85kU5T8ft2AR9Cs4IlSt', NULL, '192.168.11.50', '', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiU3VKUHFReW40Rmo1c3RQVmkzeXVwblJ5VjhwOUxVQjRRWEYySXd1TiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjU6Imh0dHA6Ly8xOTIuMTY4LjExLjUwOjgwMDAiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1760089303),
 ('U7Zje6TgJp6LUubFpEF5IKzaCSWEXejzzJIYZHWJ', NULL, '192.168.11.50', 'Avast Antivirus', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiYUlQSGxHTUw2NTliUFF6YmF6aDJ1OGVPUTM0ZGh0V2tIbjhLRmEybSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjU6Imh0dHA6Ly8xOTIuMTY4LjExLjUwOjgwMDAiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1760176286),
-('5elrkVmczoB2mzBT2Xk9IWJnK1STxxVjoQJ8VKRx', NULL, '192.168.11.50', '', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiWEk2SjNaMmJ2WXAyamZNYkZ0QmZOR2J3Mkc5QUNFSzBwZDE2UVhtMSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjU6Imh0dHA6Ly8xOTIuMTY4LjExLjUwOjgwMDAiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1760176300);
+('5elrkVmczoB2mzBT2Xk9IWJnK1STxxVjoQJ8VKRx', NULL, '192.168.11.50', '', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiWEk2SjNaMmJ2WXAyamZNYkZ0QmZOR2J3Mkc5QUNFSzBwZDE2UVhtMSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjU6Imh0dHA6Ly8xOTIuMTY4LjExLjUwOjgwMDAiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1760176300),
+('h9TU904S6SySzzRVA4h6nf0Zm23i7IWRKXiKeqn4', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:143.0) Gecko/20100101 Firefox/143.0', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiS2xOTzNBNUdKcmdwT1JrYkQxaWpRZ0NIN1k5b2h0OFdVMjA0Znp6SSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1760203386),
+('gz6qkgPBmvTW6LawEHBB4VAJsd6Ich0zzNNui43V', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:143.0) Gecko/20100101 Firefox/143.0', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiOEdTYWZpRDdnczRmQkROVk9yN01YSHd5NWM5dW1JalNDcUc2eXFYYSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1760203443),
+('XEWoHUDYtY2f5IzNdiVW2ftrpjYAVIR2Trjwxgjs', NULL, '192.168.11.50', 'Avast Antivirus', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiM016M3B3UkU4R3ZHSVBkcmZwY1hHR3ZFeXlNQzJVSm10NW5wYVdBaCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjU6Imh0dHA6Ly8xOTIuMTY4LjExLjUwOjgwMDAiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1760263010),
+('1Dx3HjVrji8153r45VuGqGSPisxowyGrDGVqgQUp', NULL, '192.168.11.50', '', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoib3lVU3JVZ2gyYjVEZnpMQ3dPSHI5NVFVbkFNMWN5ZUxMVXd3S1ZLeCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjU6Imh0dHA6Ly8xOTIuMTY4LjExLjUwOjgwMDAiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1760263023),
+('lApYVCDEr5PxxeaaO7MyLHWG5YKJJl3mcjDrWVzv', NULL, '192.168.11.50', 'Avast Antivirus', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiVGJRYURkdEhvQU94V0R6dktmTVR0Q2lEUm15QXNSa1M3Nk5JbTdqcSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjU6Imh0dHA6Ly8xOTIuMTY4LjExLjUwOjgwMDAiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1760349867),
+('NEktMdkvR97iSdOxvvxlqV5GycTcP8NPpTxvPGFX', NULL, '192.168.11.50', '', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoieGFhaE5VMzdMZ0N4VG02bDN2bENaU3IyRXd3aXhGYllWTURZVDM0dCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjU6Imh0dHA6Ly8xOTIuMTY4LjExLjUwOjgwMDAiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1760349881),
+('imhz5V75EY9X21bxapzLobLP4juMigDN7OTceKWg', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:143.0) Gecko/20100101 Firefox/143.0', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoieDN2c3RFOHJZZGM3cTRJQTF5SGZUaXVuM0hIN2RzNWdkc3FnZjgwMCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1760361737),
+('EhzixuEAJF8SmqOZtVg05tDafBEs4RmgVyCL4QW8', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:143.0) Gecko/20100101 Firefox/143.0', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiaUVMbHIxZ1VLaDF2OUF0SXNtUWNiTktRUGI5NTJ3dElWUFo3bjgySyI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1760361741),
+('85o777fKCXB2IHxzwcUcDQjuYaJ99G7GPIluujwg', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:143.0) Gecko/20100101 Firefox/143.0', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiTHh0YkFPQndUaTV6ZlVwSmVqRXEyeE81WExzNkdnRUZmRE8ySkVidyI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1760421667),
+('PecmhG7bJSbc4eTgoLwkM9paI2RCDg5aUJNJmVfA', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:143.0) Gecko/20100101 Firefox/143.0', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiWnA5RlZSN2NNWjFZRkRtcTVhcGhNQldJc0RFcFNlOGY5ZHE3c2U3ciI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1760421672),
+('Kd2yjAyEELXsm50160rqqArJ28t9wufpexXFq9Rw', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiV0RsdVZOTEM2MGhkTWpWWXN3cm13NDk4anpnUmdPVlA0eGk0aVNYWiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1760621039),
+('kr63ihkB5wtuTLPTvXTzhxrDHzqOQXdus1ANnIXo', NULL, '192.168.11.50', 'Avast Antivirus', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiVmw0YnF0ZEdnVUFSS1pZYkVKbHVoTEtYbjhiU1BRSzNoYkFWS2NBTyI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjU6Imh0dHA6Ly8xOTIuMTY4LjExLjUwOjgwMDAiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1760783221),
+('z9VHPqqi2JjEm1ficD3wlLsHozNQsVidA5UQk6Nu', NULL, '192.168.11.50', '', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiOXFDNWV5ZVZGbzI0ZlhLZU5xTmV3MUFKaDFnTTZZRWYwVk90TkJLTiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjU6Imh0dHA6Ly8xOTIuMTY4LjExLjUwOjgwMDAiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1760783236);
 
 -- --------------------------------------------------------
 
@@ -311,26 +415,47 @@ CREATE TABLE IF NOT EXISTS `subcats` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `subcats_catid_name_unique` (`catid`,`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `subcats`
 --
 
 INSERT INTO `subcats` (`id`, `catid`, `name`, `created_at`, `updated_at`) VALUES
-(1, 33, 'Sub1', '2025-10-10 08:27:15', '2025-10-10 08:27:15'),
-(2, 33, 'Sub2', '2025-10-10 08:27:23', '2025-10-10 08:27:23'),
 (3, 30, 'sub1', '2025-10-10 08:28:02', '2025-10-10 08:28:02'),
 (4, 31, 'Sub1', '2025-10-10 08:30:46', '2025-10-10 08:30:46'),
 (5, 30, 'Sub12', '2025-10-10 08:32:37', '2025-10-10 08:32:37'),
 (6, 6, 'Rrrr', '2025-10-10 08:32:47', '2025-10-10 08:32:47'),
-(7, 26, 'Sub1', '2025-10-10 09:03:58', '2025-10-10 09:03:58'),
 (8, 2, 'New1', '2025-10-10 09:04:23', '2025-10-10 09:04:23'),
 (9, 32, 'New1', '2025-10-10 09:04:34', '2025-10-10 09:04:34'),
 (10, 32, 'Sub1', '2025-10-10 09:14:58', '2025-10-10 09:14:58'),
 (11, 32, 'Sub14', '2025-10-10 09:15:13', '2025-10-10 09:15:13'),
-(12, 33, '51', '2025-10-10 09:16:23', '2025-10-10 09:16:23'),
-(13, 33, '514', '2025-10-10 09:16:33', '2025-10-10 09:16:33');
+(12, 6, 'Tytyy', '2025-10-13 02:44:32', '2025-10-13 02:44:32'),
+(13, 2, 'Tttt', '2025-10-13 10:11:15', '2025-10-13 10:11:15'),
+(14, 41, 'Ttttt', '2025-10-13 10:11:28', '2025-10-13 10:11:28'),
+(15, 41, 'Ttggʻg', '2025-10-13 10:11:42', '2025-10-13 10:11:42'),
+(16, 39, 'Subfg', '2025-10-13 10:11:55', '2025-10-13 10:11:55'),
+(17, 37, 'Bnew1', '2025-10-13 10:12:08', '2025-10-13 10:12:08'),
+(18, 37, 'New33', '2025-10-13 10:12:17', '2025-10-13 10:12:17'),
+(19, 36, 'Sunb3', '2025-10-13 10:12:31', '2025-10-13 10:12:31'),
+(20, 41, 'Yyyy', '2025-10-18 06:16:05', '2025-10-18 06:16:05'),
+(21, 41, 'Yyþttt', '2025-10-18 06:16:16', '2025-10-18 06:16:16'),
+(22, 37, 'Ffffff', '2025-10-18 06:16:23', '2025-10-18 06:16:23'),
+(23, 37, 'Ggʻgg', '2025-10-18 06:16:30', '2025-10-18 06:16:30'),
+(24, 26, 'Tttttt', '2025-10-18 06:17:16', '2025-10-18 06:17:16'),
+(25, 25, 'Sss', '2025-10-18 07:16:30', '2025-10-18 07:16:30'),
+(26, 22, 'Ttty', '2025-10-18 07:16:44', '2025-10-18 07:16:44'),
+(27, 31, 'Gggg', '2025-10-18 07:16:53', '2025-10-18 07:16:53'),
+(28, 27, 'Llll', '2025-10-18 07:17:10', '2025-10-18 07:17:10'),
+(29, 23, 'Gghhh', '2025-10-18 07:17:22', '2025-10-18 07:17:22'),
+(30, 23, 'Gghh', '2025-10-18 07:17:35', '2025-10-18 07:17:35'),
+(31, 23, '111', '2025-10-18 07:17:48', '2025-10-18 07:17:48'),
+(32, 23, '1113', '2025-10-18 07:17:56', '2025-10-18 07:17:56'),
+(33, 20, 'Ffggg', '2025-10-18 07:18:13', '2025-10-18 07:18:13'),
+(34, 39, 'Gʻgggg', '2025-10-18 07:29:17', '2025-10-18 07:29:17'),
+(35, 42, 'Manysub2', '2025-10-18 07:29:25', '2025-10-18 12:25:05'),
+(36, 40, 'Ggggg', '2025-10-18 07:29:34', '2025-10-18 07:29:34'),
+(37, 42, 'Manysub1', '2025-10-18 07:29:41', '2025-10-18 12:24:41');
 
 -- --------------------------------------------------------
 
